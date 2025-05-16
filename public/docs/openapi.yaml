@@ -1,0 +1,546 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: "This documentation aims to provide all the information you need to work with our API.\n                      \n    "
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/lists/categories:
+    get:
+      summary: ''
+      operationId: getApiListsCategories
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'consequuntur tempore ea'
+                    -
+                      id: 2
+                      name: 'et sint et'
+                    -
+                      id: 3
+                      name: 'odio vel saepe'
+                    -
+                      id: 4
+                      name: 'nesciunt vel possimus'
+                    -
+                      id: 5
+                      name: 'neque voluptatem magni'
+                    -
+                      id: 6
+                      name: 'assumenda sed sit'
+                    -
+                      id: 7
+                      name: 'enim velit blanditiis'
+                    -
+                      id: 8
+                      name: 'ipsum fugiat enim'
+                    -
+                      id: 9
+                      name: 'accusamus at numquam'
+                    -
+                      id: 10
+                      name: 'ex laudantium consequatur'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'consequuntur tempore ea'
+                      -
+                        id: 2
+                        name: 'et sint et'
+                      -
+                        id: 3
+                        name: 'odio vel saepe'
+                      -
+                        id: 4
+                        name: 'nesciunt vel possimus'
+                      -
+                        id: 5
+                        name: 'neque voluptatem magni'
+                      -
+                        id: 6
+                        name: 'assumenda sed sit'
+                      -
+                        id: 7
+                        name: 'enim velit blanditiis'
+                      -
+                        id: 8
+                        name: 'ipsum fugiat enim'
+                      -
+                        id: 9
+                        name: 'accusamus at numquam'
+                      -
+                        id: 10
+                        name: 'ex laudantium consequatur'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        name:
+                          type: string
+                          example: 'consequuntur tempore ea'
+      tags:
+        - Categories
+      security: []
+  /api/categories:
+    get:
+      summary: 'Get Categories'
+      operationId: getCategories
+      description: 'Getting the list of the categories'
+      parameters:
+        -
+          in: query
+          name: page
+          description: 'Which page to show.'
+          example: 12
+          required: true
+          schema:
+            type: integer
+            description: 'Which page to show.'
+            example: 12
+            nullable: false
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Categories
+      security: []
+    post:
+      summary: ''
+      operationId: postApiCategories
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Name of the category.'
+                  example: Clothing
+                  nullable: false
+              required:
+                - name
+      security: []
+  '/api/categories/{id}':
+    get:
+      summary: ''
+      operationId: getApiCategoriesId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Categories
+      security: []
+    put:
+      summary: ''
+      operationId: putApiCategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: nisi
+                  nullable: false
+              required:
+                - name
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiCategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Categories
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/user:
+    get:
+      summary: ''
+      operationId: getApiUser
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/products:
+    get:
+      summary: ''
+      operationId: getApiProducts
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      category_id: 2
+                      name: voluptatibus
+                      price: '286.70'
+                      category:
+                        id: 2
+                        name: 'et sint et'
+                    -
+                      id: 2
+                      category_id: 10
+                      name: eveniet
+                      price: '123.73'
+                      category:
+                        id: 10
+                        name: 'ex laudantium consequatur'
+                    -
+                      id: 3
+                      category_id: 2
+                      name: velit
+                      price: '868.87'
+                      category:
+                        id: 2
+                        name: 'et sint et'
+                    -
+                      id: 4
+                      category_id: 2
+                      name: itaque
+                      price: '22.80'
+                      category:
+                        id: 2
+                        name: 'et sint et'
+                    -
+                      id: 5
+                      category_id: 2
+                      name: sequi
+                      price: '694.07'
+                      category:
+                        id: 2
+                        name: 'et sint et'
+                    -
+                      id: 6
+                      category_id: 7
+                      name: culpa
+                      price: '156.31'
+                      category:
+                        id: 7
+                        name: 'enim velit blanditiis'
+                    -
+                      id: 7
+                      category_id: 6
+                      name: et
+                      price: '768.66'
+                      category:
+                        id: 6
+                        name: 'assumenda sed sit'
+                    -
+                      id: 8
+                      category_id: 1
+                      name: aliquam
+                      price: '622.86'
+                      category:
+                        id: 1
+                        name: 'consequuntur tempore ea'
+                    -
+                      id: 9
+                      category_id: 6
+                      name: veritatis
+                      price: '743.40'
+                      category:
+                        id: 6
+                        name: 'assumenda sed sit'
+                  links:
+                    first: 'http://localhost/api/products?page=1'
+                    last: 'http://localhost/api/products?page=3'
+                    prev: null
+                    next: 'http://localhost/api/products?page=2'
+                  meta:
+                    current_page: 1
+                    from: 1
+                    last_page: 3
+                    links:
+                      -
+                        url: null
+                        label: '&laquo; Previous'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=1'
+                        label: '1'
+                        active: true
+                      -
+                        url: 'http://localhost/api/products?page=2'
+                        label: '2'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=3'
+                        label: '3'
+                        active: false
+                      -
+                        url: 'http://localhost/api/products?page=2'
+                        label: 'Next &raquo;'
+                        active: false
+                    path: 'http://localhost/api/products'
+                    per_page: 9
+                    to: 9
+                    total: 20
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        category_id: 2
+                        name: voluptatibus
+                        price: '286.70'
+                        category:
+                          id: 2
+                          name: 'et sint et'
+                      -
+                        id: 2
+                        category_id: 10
+                        name: eveniet
+                        price: '123.73'
+                        category:
+                          id: 10
+                          name: 'ex laudantium consequatur'
+                      -
+                        id: 3
+                        category_id: 2
+                        name: velit
+                        price: '868.87'
+                        category:
+                          id: 2
+                          name: 'et sint et'
+                      -
+                        id: 4
+                        category_id: 2
+                        name: itaque
+                        price: '22.80'
+                        category:
+                          id: 2
+                          name: 'et sint et'
+                      -
+                        id: 5
+                        category_id: 2
+                        name: sequi
+                        price: '694.07'
+                        category:
+                          id: 2
+                          name: 'et sint et'
+                      -
+                        id: 6
+                        category_id: 7
+                        name: culpa
+                        price: '156.31'
+                        category:
+                          id: 7
+                          name: 'enim velit blanditiis'
+                      -
+                        id: 7
+                        category_id: 6
+                        name: et
+                        price: '768.66'
+                        category:
+                          id: 6
+                          name: 'assumenda sed sit'
+                      -
+                        id: 8
+                        category_id: 1
+                        name: aliquam
+                        price: '622.86'
+                        category:
+                          id: 1
+                          name: 'consequuntur tempore ea'
+                      -
+                        id: 9
+                        category_id: 6
+                        name: veritatis
+                        price: '743.40'
+                        category:
+                          id: 6
+                          name: 'assumenda sed sit'
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1
+                        category_id:
+                          type: integer
+                          example: 2
+                        name:
+                          type: string
+                          example: voluptatibus
+                        price:
+                          type: string
+                          example: '286.70'
+                        category:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              example: 2
+                            name:
+                              type: string
+                              example: 'et sint et'
+                  links:
+                    type: object
+                    properties:
+                      first:
+                        type: string
+                        example: 'http://localhost/api/products?page=1'
+                      last:
+                        type: string
+                        example: 'http://localhost/api/products?page=3'
+                      prev:
+                        type: string
+                        example: null
+                      next:
+                        type: string
+                        example: 'http://localhost/api/products?page=2'
+                  meta:
+                    type: object
+                    properties:
+                      current_page:
+                        type: integer
+                        example: 1
+                      from:
+                        type: integer
+                        example: 1
+                      last_page:
+                        type: integer
+                        example: 3
+                      links:
+                        type: array
+                        example:
+                          -
+                            url: null
+                            label: '&laquo; Previous'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=1'
+                            label: '1'
+                            active: true
+                          -
+                            url: 'http://localhost/api/products?page=2'
+                            label: '2'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=3'
+                            label: '3'
+                            active: false
+                          -
+                            url: 'http://localhost/api/products?page=2'
+                            label: 'Next &raquo;'
+                            active: false
+                        items:
+                          type: object
+                          properties:
+                            url:
+                              type: string
+                              example: null
+                            label:
+                              type: string
+                              example: '&laquo; Previous'
+                            active:
+                              type: boolean
+                              example: false
+                      path:
+                        type: string
+                        example: 'http://localhost/api/products'
+                      per_page:
+                        type: integer
+                        example: 9
+                      to:
+                        type: integer
+                        example: 9
+                      total:
+                        type: integer
+                        example: 20
+      tags:
+        - Endpoints
+      security: []
+tags:
+  -
+    name: Categories
+    description: 'Managing Categories'
+  -
+    name: Endpoints
+    description: ''
